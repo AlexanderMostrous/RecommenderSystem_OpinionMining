@@ -1,11 +1,9 @@
-################################################
 import pandas as pd
 import json
 
-
-def load_file():
+def load_file(path):
     # Opening file
-    file1 = open('C:/Development/Thesis/RecommenderSystem_OpinionMining/Appliances_5.json', 'r')
+    file1 = open(path, 'r')
 
     df = pd.DataFrame({})
     counter = 0
@@ -17,4 +15,5 @@ def load_file():
         counter += 1
 
     file1.close()
+
     return df

@@ -1,6 +1,14 @@
 import loadFile as lf
-#import spacy
+import data_sanitizer as ds
+import create_sets as cs
 
-# English trained pipeline
-#nlp = spacy.load("en_core_web_sm")
-print(lf.load_file().head())
+filePath = 'C:/Development/Thesis/RecommenderSystem_OpinionMining/Appliances_5.json'
+
+# Read File
+my_data_frame = lf.load_file(filePath)
+
+# Sanitize Data
+my_data_frame = ds.sanitize_data(my_data_frame)
+
+# Create Sets - (optional: Give a second argument as float)
+training_set, testing_set = cs.create_sets(my_data_frame)
