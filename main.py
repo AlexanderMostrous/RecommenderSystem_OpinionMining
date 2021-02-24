@@ -10,5 +10,6 @@ my_data_frame = lf.load_file(filePath)
 # Sanitize Data
 my_data_frame = ds.sanitize_data(my_data_frame)
 
-# Create Sets - (optional: Give a second argument as float)
+# Create Sets - (optional: Second argument as float - Ratio of data that will be used as testing set - Default 0.2)
 training_set, testing_set = cs.create_sets(my_data_frame)
+
